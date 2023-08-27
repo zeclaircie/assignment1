@@ -1,4 +1,5 @@
 import math
+import random
 
 # greet the user by name
 name = input("What's your name?\n")
@@ -38,8 +39,17 @@ for inputID, medievalInput in enumerate(medievalInputs):
     sumWeight += medievalInput
 kilos = sumWeight // 1000
 grams = sumWeight % 1000
-weightResult = "The weight in modern units is:\n{} kilograms and {:.2f} grams".format(kilos, grams)
+weightResult = "The weight in modern units is:\n{} kilograms and {:.2f} grams.".format(kilos, grams)
 print(weightResult)
 
 # draw a random combination of 3 integer between 0 and 9
+chooseThreeFrom = [i for i in range(0, 10)]
+threeDigi = random.choices(chooseThreeFrom, k=3)
+threeDigiResult = f"Your code is:{threeDigi}"
+print(threeDigiResult)
 
+# draw a random combination of 4 integer between 1 and 6
+chooseFourFrom = [i for i in range(1, 7)]
+fourDigi = random.choices(chooseFourFrom, k=4)
+fourDigiResult = f"Your code is:{fourDigi}"
+print(fourDigiResult)
