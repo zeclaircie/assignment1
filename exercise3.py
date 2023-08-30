@@ -9,4 +9,11 @@ else:
     zanderComment = f"Your zander is {difference}cm smaller than the standard size. Please release it back to the lake!"
     print(zanderComment)
 
-#
+# Print out a written description of cabin class
+cabinClasses = {
+    "LUX": "This is an upper-deck cabin with a balcony.",
+    "A": "This is above the car deck, equipped with a window.",
+    "B": "",
+    "C": ""
+
+}
