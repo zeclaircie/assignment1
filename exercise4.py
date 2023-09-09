@@ -38,3 +38,20 @@ while guess != answer:
 print("You are correct!")
 
 # check username and password
+user = {'python': 'rules'}
+inputName = input("Enter user name:")
+while inputName not in user:
+    print("Non-exist user!")
+    inputName = input("Enter user name:")
+inputPass = input("Enter password:")
+timer = 0
+while inputPass != user[inputName]:
+    print("Wrong password!")
+    timer += 1
+    if timer >= 5:
+        print("Access denied.")
+        exit()
+    inputPass = input("Enter password:")
+print("Welcome!")
+
+
