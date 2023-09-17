@@ -24,6 +24,32 @@ else:
     for i in range(5):
         print(allNum[i])
 
+
+# tell if an integer is a prime number recursively
+def is_prime_recursive(num, i=2):
+    if num <= 1:
+        return False
+    elif num == 2:
+        return True
+    elif num % i == 0:
+        return False
+    else:
+        is_prime_recursive(num, i+1)
+    return True
+
+# tell if an integer is a prime number with for loop
+number = int(input("Enter an integer:"))
+if number <= 1:
+    print("It is not a prime number.")
+else:
+    for i in range(2, number):
+        if number % i == 0:
+            print("It is not a prime number!")
+            break
+    else:
+        print("It IS a prime number!")
+print(is_prime_recursive(number))
+
 # prompt user to input five cities one by one and print them one by one in the input order
 cities = []
 for i in range(5):
