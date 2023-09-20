@@ -42,3 +42,4 @@ else:
         info = f"{result[1]} {airportType[result[0]]}(s)"
         print(info)
 
+
