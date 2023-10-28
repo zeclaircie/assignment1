@@ -20,13 +20,18 @@ class Elevator:
         print(f"You are now at floor {self.crtfloor}")
 
 class Building:
-    elevators = []
-    def __init__(self,topfloor, bottomfloor, elevator):
+    def __init__(self,topfloor, bottomfloor, elevatornum):
         self.topfloor = topfloor
         self.bottomfloor = bottomfloor
-        self.elevator = elevator
-        for i in range(self.elevator):
-            Building.elevators.append(Elevator(topfloor, bottomfloor))
+        self.elevatornum = elevatornum
+        self.elevators = []
+        for i in range(self.elevatornum):
+            self.elevators.append(Elevator(topfloor, bottomfloor))
 
-    def run_elevator(self, num):
-        
+    def run_elevator(self, elenum, destfloor):
+        print(f"Elevator {elenum} selected. Going to floor {destfloor}.")
+        self.elevators[elenum-1].go_to_floor(destfloor)
+
+
+building = Building(20, 0, 5)
+building.run_elevator(2, 10)
