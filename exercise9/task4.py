@@ -31,11 +31,13 @@ for i in range(10):
 
 stop = False
 while not stop:
-    for car in cars:
-        if car.distance >= 10000:
-            stop = True
-        car.accelerate(random.randrange(-10, 15))
-        car.drive(1)
+    alldistance = [car.distance for car in cars]
+    if max(max(alldistance), 10000) == 10000:
+        for car in cars:
+            car.accelerate(random.randrange(-10, 15))
+            car.drive(1)
+    else:
+        stop = True
 
 
 tbl = tabulate({"Registration Number": [car.regNum for car in cars],
