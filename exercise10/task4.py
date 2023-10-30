@@ -44,10 +44,7 @@ class Race:
 
     def race_finished(self):
         alldistance = [car.traveldistance for car in self.cars]
-        if max(max(alldistance), self.distance) == self.distance:
-            return False
-        else:
-            return True
+        return max(max(alldistance), self.distance) != self.distance
 
 
 participants = []
