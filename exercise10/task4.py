@@ -46,10 +46,18 @@ class Race:
         alldistance = [car.traveldistance for car in self.cars]
         return max(max(alldistance), self.distance) != self.distance
 
+        # This works too. Fixed the issue in the last version.
+        # def race_finished(self):
+        #     stop = False
+        #     for car in self.cars:
+        #         if car.traveldistance > self.distance:
+        #             stop = True
+        #     return stop
+
 
 participants = []
-for i in range(10):
-    regnum = f"ABC-{i+1}"
+for i in range(1, 11):
+    regnum = f"ABC-{i}"
     mspeed = random.randrange(100, 200)
     participants.append(Car(regnum, mspeed))
 
